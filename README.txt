@@ -1,4 +1,3 @@
-README
 # Food Ordering System Chewiez Inc.
 
 This is an application based on a food ordering system 
