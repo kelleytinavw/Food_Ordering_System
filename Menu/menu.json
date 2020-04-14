@@ -1,7 +1,23 @@
 {
     
     "menu":[
+        
+        {
+            "category":"Drinks"[
+                {
+                    "item":{
+                        "item_id":      12300
+                        "item_name":      "Coffee w/Soy Milk",
+                        "item_descr":   "Whipped cream and coffe beans + soy milk = YUMMY!",
+                        "item_ingredients":     "soy milk, coffee beans",   
+                        "item_price":      $5.34,  
+                        "item_photo":    false   
+                    }
+                },
+
+                
+            ]
+        }
 
     ]
-
  }
