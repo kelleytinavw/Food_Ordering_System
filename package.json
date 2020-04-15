@@ -1,0 +1,22 @@
+{
+  "name": "food_ordering_system",
+  "version": "1.0.0",
+  "description": "This is an application based on a food ordering system \r similar to that of Door Dash and Uber Eats.  We mainly are\r learning how to utilize databases and learn how to link them \r to the front end.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kelleytinavw/Food_Ordering_System.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kelleytinavw/Food_Ordering_System/issues"
+  },
+  "homepage": "https://github.com/kelleytinavw/Food_Ordering_System#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
