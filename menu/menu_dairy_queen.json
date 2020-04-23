@@ -1,60 +1,33 @@
 {
-    "menu_tim_hortons": [
-        "menu_id": 12000,
-        "menu_name": "Tim Hortons Menu",
+    "menu_dairy_queen": [
+        "menu_id": 15000,
+        "menu_name": "Dairy Queen Menu",
         {
-        "Drinks": [
+        "Blizzards": [
             {
-                "item_id": 12300,
-                "item_name": "Coffee w/Soy Milk",
-                "item_descr": "Whipped cream and coffe beans + soy milk = YUMMY!",
-                "item_ingredients": "soy milk, coffee beans",
-                "item_price": 5.34,
-                "item_photo": false
+                "item_id": 15300,
+                "item_name": "Butterfinger Blizzard",
+                "item_descr": "Butterfinger candy bars mixed with vanilla ice cream make for an interesting flavor mix",
+                "item_ingredients": "milk, whipping cream, butterfinger candy bar",
+                "item_price": 6.00,
+                "item_photo": "../website/img/bg-img/12.jpg"
             },
             {
-                "item_id": 12301,
-                "item_name": "Coffee w/Creamer",
-                "item_descr": "Whipped cream and coffe beans + creamer = YUMMY!",
-                "item_ingredients": "100% milk cream, coffee beans",
-                "item_price": 5.50,
-                "item_photo": false
+                "item_id": 15301,
+                "item_name": "Strawberry Blizzard",
+                "item_descr": "Strawberry icecream whipped and served with chunks of strawberry",
+                "item_ingredients": "milk, whipping cream, strawberries",
+                "item_price": 6.00,
+                "item_photo": "../website/img/bg-img/13.jpg"
             },
             {
-                "item_id": 12302,
-                "item_name": "Black Coffee",
-                "item_descr": "regualer black coffee is YUMMY!",
-                "item_ingredients": "coffee beans",
-                "item_price": 4.50,
-                "item_photo": false
+                "item_id": 15302,
+                "item_name": "Oreo Blizzard",
+                "item_descr": "Oreo cookies mixed in with vanilla ice cream makes for an interesting combination.",
+                "item_ingredients": "milk, whipping cream, oreo cookies",
+                "item_price": 6.00,
+                "item_photo": "../website/img/bg-img/14.jpg"
             }
-        ]}, //END OF DRINKS
-        {
-        "Desserts": [
-            {
-                "item_id": 13400,
-                "item_name": "Chocolate Doughnut",
-                "item_descr": "Chocolate glazed doughnut",
-                "item_ingredients": "bread, sugar",
-                "item_price": 2.04,
-                "item_photo": false
-            },
-            {
-                "item_id": 13401,
-                "item_name": "Glazed Doughnut",
-                "item_descr": "Vanilla glazed doughnut",
-                "item_ingredients": "bread, sugar",
-                "item_price": 2.50,
-                "item_photo": false
-            },
-            {
-                "item_id": 13402,
-                "item_name": "Cream Filled Doughnut",
-                "item_descr": "Milk whipped cream filling in a vanilla glazed doughnut",
-                "item_ingredients": "whipped milk, bread, sugar",
-                "item_price": 3.50,
-                "item_photo": false
-            }
-        ]} //END OF DESSERTS
-    ] //END OF MENU
-} //END OF JSON FILE
+        ]}
+    ]
+}
