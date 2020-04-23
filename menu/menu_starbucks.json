@@ -10,7 +10,7 @@
                     "item_descr": "Chilled ice cold coffee with cream and sugar",
                     "item_ingredients": "coffee beans, cream, pure cane sugar",
                     "item_price": 4.00,
-                    "item_photo": false
+                    "item_photo": "../website/img/bg-img/6.jpg"
                 },
                 {
                     "item_id": 13301,
@@ -18,7 +18,7 @@
                     "item_descr": "Hot coffee served with milk and topped off with a beautiful design.",
                     "item_ingredients": "coffee beans, cream",
                     "item_price": 5.00,
-                    "item_photo": false
+                    "item_photo": "../website/img/bg-img/3.jpg"
                 },
                 {
                     "item_id": 13302,
@@ -26,7 +26,7 @@
                     "item_descr": "Simple black coffee to get your day started",
                     "item_ingredients": "coffee beans",
                     "item_price": 4.00,
-                    "item_photo": false
+                    "item_photo": "../website/img/bg-img/2.jpg"
                 }
             ]}
     ]

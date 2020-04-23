@@ -10,7 +10,7 @@
                 "item_descr": "Ice Colde lemonade makes your day shine",
                 "item_ingredients": "lemons, water, sugar",
                 "item_price": 3.00,
-                "item_photo": false
+                "item_photo": "../website/img/bg-img/7.jpg"
             }
             
         ]},
@@ -23,7 +23,7 @@
                 "item_descr": "Crispy hot fries ready to be eaten",
                 "item_ingredients": "potatoes, salt, seasonings, vegtable oil",
                 "item_price": 1.00,
-                "item_photo": false
+                "item_photo": "../website/img/bg-img/10.jpg"
             }
         ]},
 
@@ -35,7 +35,7 @@
                     "item_descr": "Crispy buns, juicy beef, with pickles, lettuce, and tomatoes makes for a good afternoon lunch.",
                     "item_ingredients": "bread, beef patties, cheese, tomatoes, pickles, lettuce",
                     "item_price": 5.00,
-                    "item_photo": false
+                    "item_photo": "../website/img/bg-img/11.jpg"
                 }
             ]}
 

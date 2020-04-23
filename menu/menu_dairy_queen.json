@@ -10,7 +10,7 @@
                 "item_descr": "Butterfinger candy bars mixed with vanilla ice cream make for an interesting flavor mix",
                 "item_ingredients": "milk, whipping cream, butterfinger candy bar",
                 "item_price": 6.00,
-                "item_photo": false
+                "item_photo": "../website/img/bg-img/12.jpg"
             },
             {
                 "item_id": 15301,
@@ -18,7 +18,7 @@
                 "item_descr": "Strawberry icecream whipped and served with chunks of strawberry",
                 "item_ingredients": "milk, whipping cream, strawberries",
                 "item_price": 6.00,
-                "item_photo": false
+                "item_photo": "../website/img/bg-img/13.jpg"
             },
             {
                 "item_id": 15302,
@@ -26,8 +26,8 @@
                 "item_descr": "Oreo cookies mixed in with vanilla ice cream makes for an interesting combination.",
                 "item_ingredients": "milk, whipping cream, oreo cookies",
                 "item_price": 6.00,
-                "item_photo": false
+                "item_photo": "../website/img/bg-img/14.jpg"
             }
         ]}
-    ] //END OF MENU
-} //END OF JSON FILE
+    ]
+}
