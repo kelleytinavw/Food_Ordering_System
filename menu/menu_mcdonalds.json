@@ -1,60 +1,43 @@
 {
-    "menu_tim_hortons": [
-        "menu_id": 12000,
-        "menu_name": "Tim Hortons Menu",
+    "menu_mcdonalds": [
+        "menu_id": 14000,
+        "menu_name": "McDonald's Menu",
         {
         "Drinks": [
             {
-                "item_id": 12300,
-                "item_name": "Coffee w/Soy Milk",
-                "item_descr": "Whipped cream and coffe beans + soy milk = YUMMY!",
-                "item_ingredients": "soy milk, coffee beans",
-                "item_price": 5.34,
-                "item_photo": false
-            },
-            {
-                "item_id": 12301,
-                "item_name": "Coffee w/Creamer",
-                "item_descr": "Whipped cream and coffe beans + creamer = YUMMY!",
-                "item_ingredients": "100% milk cream, coffee beans",
-                "item_price": 5.50,
-                "item_photo": false
-            },
-            {
-                "item_id": 12302,
-                "item_name": "Black Coffee",
-                "item_descr": "regualer black coffee is YUMMY!",
-                "item_ingredients": "coffee beans",
-                "item_price": 4.50,
+                "item_id": 14300,
+                "item_name": "Lemonade",
+                "item_descr": "Ice Colde lemonade makes your day shine",
+                "item_ingredients": "lemons, water, sugar",
+                "item_price": 3.00,
                 "item_photo": false
             }
-        ]}, //END OF DRINKS
+            
+        ]},
+
         {
-        "Desserts": [
+        "Dollor_Value": [
             {
-                "item_id": 13400,
-                "item_name": "Chocolate Doughnut",
-                "item_descr": "Chocolate glazed doughnut",
-                "item_ingredients": "bread, sugar",
-                "item_price": 2.04,
-                "item_photo": false
-            },
-            {
-                "item_id": 13401,
-                "item_name": "Glazed Doughnut",
-                "item_descr": "Vanilla glazed doughnut",
-                "item_ingredients": "bread, sugar",
-                "item_price": 2.50,
-                "item_photo": false
-            },
-            {
-                "item_id": 13402,
-                "item_name": "Cream Filled Doughnut",
-                "item_descr": "Milk whipped cream filling in a vanilla glazed doughnut",
-                "item_ingredients": "whipped milk, bread, sugar",
-                "item_price": 3.50,
+                "item_id": 14400,
+                "item_name": "Fries",
+                "item_descr": "Crispy hot fries ready to be eaten",
+                "item_ingredients": "potatoes, salt, seasonings, vegtable oil",
+                "item_price": 1.00,
                 "item_photo": false
             }
-        ]} //END OF DESSERTS
-    ] //END OF MENU
-} //END OF JSON FILE
+        ]},
+
+        {
+            "Burgers": [
+                {
+                    "item_id": 14500,
+                    "item_name": "Big Mac",
+                    "item_descr": "Crispy buns, juicy beef, with pickles, lettuce, and tomatoes makes for a good afternoon lunch.",
+                    "item_ingredients": "bread, beef patties, cheese, tomatoes, pickles, lettuce",
+                    "item_price": 5.00,
+                    "item_photo": false
+                }
+            ]}
+
+    ] 
+} 

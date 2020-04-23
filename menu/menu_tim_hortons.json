@@ -6,55 +6,47 @@
         "Drinks": [
             {
                 "item_id": 12300,
-                "item_name": "Coffee w/Soy Milk",
-                "item_descr": "Whipped cream and coffe beans + soy milk = YUMMY!",
-                "item_ingredients": "soy milk, coffee beans",
-                "item_price": 5.34,
+                "item_name": "Iced Coffee",
+                "item_descr": "Chilled ice cold coffee with cream and sugar",
+                "item_ingredients": "coffee beans, cream, pure cane sugar",
+                "item_price": 4.00,
                 "item_photo": false
             },
             {
                 "item_id": 12301,
-                "item_name": "Coffee w/Creamer",
-                "item_descr": "Whipped cream and coffe beans + creamer = YUMMY!",
-                "item_ingredients": "100% milk cream, coffee beans",
-                "item_price": 5.50,
+                "item_name": "Artisan Coffee",
+                "item_descr": "Hot coffee served with milk and topped off with a beautiful design.",
+                "item_ingredients": "coffee beans, cream",
+                "item_price": 5.00,
                 "item_photo": false
             },
             {
                 "item_id": 12302,
                 "item_name": "Black Coffee",
-                "item_descr": "regualer black coffee is YUMMY!",
+                "item_descr": "Simple black coffee to get your day started",
                 "item_ingredients": "coffee beans",
-                "item_price": 4.50,
+                "item_price": 4.00,
                 "item_photo": false
             }
-        ]}, //END OF DRINKS
+        ]},
         {
         "Desserts": [
             {
-                "item_id": 13400,
-                "item_name": "Chocolate Doughnut",
-                "item_descr": "Chocolate glazed doughnut",
-                "item_ingredients": "bread, sugar",
-                "item_price": 2.04,
-                "item_photo": false
-            },
-            {
                 "item_id": 13401,
-                "item_name": "Glazed Doughnut",
+                "item_name": "Glazed Doughnuts",
                 "item_descr": "Vanilla glazed doughnut",
-                "item_ingredients": "bread, sugar",
-                "item_price": 2.50,
+                "item_ingredients": "bread, sugar, vanilla extract",
+                "item_price": 2.00,
                 "item_photo": false
             },
             {
                 "item_id": 13402,
-                "item_name": "Cream Filled Doughnut",
-                "item_descr": "Milk whipped cream filling in a vanilla glazed doughnut",
-                "item_ingredients": "whipped milk, bread, sugar",
-                "item_price": 3.50,
+                "item_name": "Vanilla & Strawberry Icing Doughnut",
+                "item_descr": "Glazed doughnut topped with vanilla and strawberry icing",
+                "item_ingredients": "bread, sugar, butter, strawberry sprinkles",
+                "item_price": 3.00,
                 "item_photo": false
             }
-        ]} //END OF DESSERTS
-    ] //END OF MENU
-} //END OF JSON FILE
+        ]} 
+    ] 
+}
