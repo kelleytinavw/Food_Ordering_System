@@ -13,7 +13,8 @@ MongoClient.connect('mongodb+srv://adrian:csc570@cluster0-onki1.mongodb.net/test
     useUnifiedTopology: true })
 .then (client => {
     console.log('Connected to Database')
-    const db = client.db('menu')
+    const db = client.db('menu-database')
+    const menuCollection = db.collection('menus')
 
     //local server
     app.listen(3000, function() {
@@ -23,8 +24,12 @@ MongoClient.connect('mongodb+srv://adrian:csc570@cluster0-onki1.mongodb.net/test
     //read
     app.use(express.static("website"))
 
-    app.post('#', (req, res) => {
-        console.log('req.body')
+    app.post('/menu', (req, res) => {
+        menuCollection.insertOne(req.body)
+        .then(result => {
+            console.log(result)
+        })
+        .catch(error => console.error(error))
     })
 })
 .catch(error => console.error(error))
