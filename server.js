@@ -3,14 +3,19 @@ console.log('food ordering management system');
 
 //express setup
 const express = require('express');
+const bodyParser = require('body-parser')
 const app = express();
+
+app.use(bodyParser.urlencoded({ extended: true }))
 
 //local server
 app.listen(3000, function() {
-    console.log('listening on 3000')
+    console.log('Listening on 3000...') 
 });
 
-//test read
-app.get('/', (req, res) => {
-    res.send('Food Ordering Management System');
+//read
+app.use(express.static("website"));
+
+app.post('#', (req, res) => {
+    console.log('req.body')
 })

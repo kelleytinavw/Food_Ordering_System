@@ -4,7 +4,7 @@
   "description": "This is an application based on a food ordering system \r similar to that of Door Dash and Uber Eats.  We mainly are\r learning how to utilize databases and learn how to link them \r to the front end.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/kelleytinavw/Food_Ordering_System#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.9.10",
+    "nodemon": "^2.0.3"
   }
 }
