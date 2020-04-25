@@ -7,7 +7,9 @@ const bodyParser = require('body-parser')
 const app = express()
 const MongoClient = require('mongodb').MongoClient
 
+app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true }))
+
 
 MongoClient.connect('mongodb+srv://adrian:csc570@cluster0-onki1.mongodb.net/test?retryWrites=true&w=majority', {
     useUnifiedTopology: true })
@@ -28,6 +30,14 @@ MongoClient.connect('mongodb+srv://adrian:csc570@cluster0-onki1.mongodb.net/test
         menuCollection.insertOne(req.body)
         .then(result => {
             console.log(result)
+        })
+        .catch(error => console.error(error))
+    })
+
+    app.get('/', (req, res) => {
+        const cursor = db.collection('menus').find().toArray()
+        .then(results => {
+            console.log(cursor)
         })
         .catch(error => console.error(error))
     })
