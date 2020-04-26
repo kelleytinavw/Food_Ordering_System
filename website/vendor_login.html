@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>Chewiez - Home</title>
+    <title>Chewiez - Login</title>
 
     <!-- Favicon  -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -70,9 +70,10 @@
             <nav class="amado-nav">
                 <ul>
                     <li><a href= "login.html">Login</a></li>
+                    <li><a href="index.html">Restaurants</a></li>
+                    <li><a href="checkout.html">Checkout</a></li>
                     <li><a href= "create-account.html">Create an Account</a></li>
-                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                    <li><a href= "vendors.html">For Vendors</a></li>
+                    <li><a href= "add-restaurant.html">Add Your Restaurant</a></li>
                 </ul>
             </nav>
            
@@ -80,14 +81,36 @@
         <!-- Header Area End -->
         <div class="cart-table-area section-padding-100">
             <div class="container-fluid">
-                <a href="index.html"><img src="img/core-img/Chewiez_homepg.png"></a>
-            </div>
+                <div class="row">
+                    <div class="col-12 col-lg-8">
+                        <div class="checkout_details_area mt-50 clearfix">
 
+                            <div class="cart-title">
+                                <h2>Login</h2>
+                            </div>
+                            <form action="/vendors_home.html" method="post">
+                                <div class="row">
+                                    <div class="col-12 mb-3">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <input type="password" class="form-control" id="password" name="password" minlength="8" placeholder="Password (minimum 8 characters)" required>
+                                    </div>
+                                                                        
+                                </div>
+                                <div class="cart-btn mt-100">
+                                    <button type = "submit" class="btn amado-btn w-100">Sign In</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
         </div>
-        <!-- Product Catagories Area End -->
     </div>
     <!-- ##### Main Content Wrapper End ##### -->
-   
+
     <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
