@@ -88,37 +88,19 @@
                             <form action="/add-payment-info.html" method="post">
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
-                                        <input type="text" class="form-control" id="first_name" name="first_name" value="" placeholder="First Name" required>
+                                        <input type="text" class="form-control" id="item_name" name= "item_name" value="" placeholder="Item Name" required>
                                     </div>
-                                    <div class="col-md-6 mb-3">
-                                        <input type="text" class="form-control" id="last_name" name="last_name" value="" placeholder="Last Name" required>
+                                    <div class="col-12 mb-3">
+                                        <input type="comment" class="form-control" id="item_descr" name="item_descr" placeholder="Add a description" value="">
                                     </div>
 
                                     <div class="col-12 mb-3">
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="">
-                                    </div>
-                                    <div class="col-12 mb-3">
-                                        <select class="w-100" id="country" name="country">
-                                        <option value="usa">United States</option>
-                                        <option value="cana">Canada</option>
-                                    </select>
-                                    </div>
-                                    <div class="col-12 mb-3">
-                                        <input type="text" class="form-control mb-3" id="street_address" name="street_address" placeholder="Address" value="">
-                                    </div>
-                                    <div class="col-12 mb-3">
-                                        <input type="text" class="form-control" id="city" name="city" placeholder="City" value="">
+                                        <input type="comment" class="form-control" id="item_ingredients" name="item_ingredients" placeholder="Ingredients" value="">
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <input type="text" class="form-control" id="zipCode" name="zipCode" placeholder="Zip Code" value="">
+                                        <input type="number" class="form-control" id="item_price" name="item_price" min="1" step= "any" max= "51" placeholder= "Price" value="">
                                     </div>
-                                    <div class="col-md-6 mb-3">
-                                        <input type="number" class="form-control" id="phone_number" name="phone_number" min="0" placeholder="Phone Number" value="">
-                                    </div>
-                                    
-                                    <div class="col-md-6 mb-3">
-                                        <input type="password" class="form-control" id="password" name="password" minlength="8" placeholder="Password (minimum 8 characters)" required>
-                                    </div>                              
+
                                 </div>
                                 <div class="cart-btn mt-100">
                                     <button type = "submit" class="btn amado-btn w-100">Next</button>
