@@ -88,20 +88,33 @@
                             <div class="cart-title">
                                 <h2>Add Payment Information - Optional</h2>
                             </div>
-
+                            
                             <form action="/account-created.html" method="post">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" id="name" name="name" value="" placeholder= "Name on Card" required>
+                                </div>
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
-                                        <input type="number" class="form-control" id="card_num" name="card_num" minlength = "16" maxlength= "16" placeholder="Credit Card Number"></input>
+                                        <input type="number" class="form-control" id="card_num" name="card_num" minlength = "16" maxlength= "16" placeholder="Credit Card Number" required></input>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <input type="number" class="form-control" id="card_digt" name="card_digt" minlength = "3" maxlength= "4" placeholder="3-Digit Number"></input>
+                                        <input type="number" class="form-control" id="card_digt" name="card_digt" minlength = "3" maxlength= "4" placeholder="3-Digit Number" required></input>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <input type="number" class="form-control" id="card_exp_month" name="card_exp_month" minlength = "1" maxlength= "2" placeholder="Expitation Month"></input>
+                                        <input type="number" class="form-control" id="card_exp_month" name="card_exp_month" minlength = "1" maxlength= "2" placeholder="Expitation Month" required></input>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <input type="number" class="form-control" id="card_exp_year" name="card_exp_year" minlength = "4" maxlength= "4" placeholder="Expitation Year"></input>
+                                        <input type="number" class="form-control" id="card_exp_year" name="card_exp_year" minlength = "4" maxlength= "4" placeholder="Expitation Year" required></input>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" id="zipCode" name="zipCode" name="zipCode" placeholder="Zip Code" minlength= "5" maxlength= "5" value="" required>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <a>Card Name</a>
+                                    <select class="w-100" id="card_name" name="card_name" required>
+                                    <option value="usa">Master Card</option>
+                                    <option value="cana">Visa</option>
+                                </select>
                                 </div>
                                 <div class="cart-btn mt-100">
                                     <button type = "submit" class="btn amado-btn w-100">Create Account</button>
