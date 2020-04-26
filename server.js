@@ -52,8 +52,8 @@ app.post('/add-payment-info.html', (req, res) => {
 
 app.post('/account-created.html', (req, res) => {
     rand_pay_id = Math.floor(Math.random() * 20000)
-    let payment_data = [rand_pay_id, "Name", req.body.card_num, "Exp", "Add", "Card_Name", rand_id]
-    rdb.run(`INSERT INTO Payment(payment_id, name, card_num, card_expDate, card_address, card_name, cust_id)
+    let payment_data = [rand_pay_id, req.body.name, req.body.card_num, req.body.card_exp_month + "/" + req.body.card_exp_year, req.body.zipCode, req.body.card_name, rand_id]
+    rdb.run(`INSERT INTO Payment(payment_id, name, card_num, card_expDate, card_zip_code, card_name, cust_id)
         VALUES(?, ?, ?, ?, ?, ?, ?)`, payment_data,
         (err, row) => {
             if (err) {
