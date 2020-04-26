@@ -6,6 +6,8 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 const MongoClient = require('mongodb').MongoClient
+let rand_id = 0
+let rand_pay_id = 0
 
 const sqlite3 = require('sqlite3').verbose()
 
@@ -35,7 +37,7 @@ app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.post('/add-payment-info.html', (req, res) => {
-    let rand_id = Math.floor(Math.random() * 10000)
+    rand_id = Math.floor(Math.random() * 10000)
     let account_data = [rand_id, req.body.first_name, req.body.last_name, req.body.email, req.body.street_address, req.body.phone_number, req.body.password]
     console.log('account data added')
     rdb.run(`INSERT INTO Customer(cust_id, first_name, last_name, cust_email, cust_address, phone, cust_pass)
@@ -49,8 +51,18 @@ app.post('/add-payment-info.html', (req, res) => {
 })
 
 app.post('/account-created.html', (req, res) => {
-    console.log('Insertion Successful')
-    res.redirect(303, './account-created.html')
+    rand_pay_id = Math.floor(Math.random() * 20000)
+    let payment_data = [rand_pay_id, "Name", req.body.card_num, "Exp", "Add", "Card_Name", rand_id]
+    rdb.run(`INSERT INTO Payment(payment_id, name, card_num, card_expDate, card_address, card_name, cust_id)
+        VALUES(?, ?, ?, ?, ?, ?, ?)`, payment_data,
+        (err, row) => {
+            if (err) {
+                return console.error(err.message)
+            }
+            console.log('Insertion Successful')
+            res.redirect(303, './account-created.html')
+        })
+    
     })
 
 })
