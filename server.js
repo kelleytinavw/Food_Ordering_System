@@ -11,7 +11,7 @@ const sqlite3 = require('sqlite3').verbose()
 
 let rdb = new sqlite3.Database('./sqlDB.db', sqlite3.OPEN_READWRITE, (err) => {
     if (err) {
-        return console.error(error)
+        return console.error(err.message)
     }
     console.log('Connected to SQLite Database')
 })
@@ -23,22 +23,37 @@ rdb.serialize(() => {
                 FROM Customer
                 ORDER BY first_name`, (err, row) => {
         if (err) {
-            console.error(error)
+            console.error(err.message)
         }
         console.log(row.f_name + "\t" + row.email)
     })
-})
 
-rdb.close((err) => {
-    if (err) {
-        return console.error(error);
-    }
-    console.log('SQLite Database Connection Closed')
-})
 
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true }))
 
+app.post('/index.html', (req, res) => {
+rdb.run(`INSERT INTO Customer(cust_id, first_name, last_name, cust_email, cust_address, phone, cust_pass)
+        VALUES(?, ?, ?, ?, ?, ?, ?)`, [Math.floor(Math.random() * 10000), req.body.first_name, req.body.last_name, req.body.email, req.body.street_address, req.body.phone_number, req.body.password],
+        (err, row) => {
+            if (err) {
+                console.error(err.message)
+            }
+                console.log('Insertion Successful')
+                res.redirect(303, './index.html')
+                
+        })
+    })
+
+})
+/*
+rdb.close((err) => {
+    if (err) {
+        return console.error(err.message);
+    }
+    console.log('SQLite Database Connection Closed')
+})
+*/
 
 MongoClient.connect('mongodb+srv://adrian:csc570@cluster0-onki1.mongodb.net/test?retryWrites=true&w=majority', {
     useUnifiedTopology: true })
