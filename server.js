@@ -107,6 +107,29 @@ app.post('/rest-created.html', (req, res) => {
             res.redirect(303, './rest-created.html') 
         })
 })
+
+app.post('/vendors_home.html', (req, res, next) => {
+    let sql = `SELECT * FROM Restaurant WHERE franchise_id = "${req.body.franchise_id}" AND rest_pass = "${req.body.password}"`
+    let isAccount
+
+    rdb.all(sql, (err, rows) => {
+        rows.forEach((row) => {
+            if (row.franchise_id == req.body.franchise_id && row.rest_pass == req.body.password) {
+                isAccount = true
+            }
+            else {
+                isAccount = false
+            }
+        })
+        if (isAccount == true) {
+            res.redirect('/vendors_home.html')
+        }
+        else {
+            res.redirect('/failed-login-vendor-redirect.html')
+        }
+    })
+})
+
 /*
 rdb.close((err) => {
     if (err) {
