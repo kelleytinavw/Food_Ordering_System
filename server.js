@@ -66,7 +66,7 @@ app.post('/account-created.html', (req, res) => {
     
 })
 
-app.post('/index.html', (req, res, next) => {
+app.post('/home.html', (req, res, next) => {
     let sql = `SELECT * FROM Customer WHERE cust_email = "${req.body.email}" AND cust_pass = "${req.body.password}"`
     let isAccount
 
@@ -80,7 +80,7 @@ app.post('/index.html', (req, res, next) => {
             }
         })
         if (isAccount == true) {
-            res.redirect('/index.html')
+            res.redirect('/home.html')
         }
         else {
             res.redirect('/failed-login-redirect.html')
