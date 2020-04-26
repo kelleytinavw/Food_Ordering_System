@@ -8,7 +8,7 @@ const app = express()
 const MongoClient = require('mongodb').MongoClient
 let rand_id = 0
 let rand_pay_id = 0
-let user_id = 0
+let rand_rest_id = 0
 
 const sqlite3 = require('sqlite3').verbose()
 
@@ -86,6 +86,21 @@ app.post('/index.html', (req, res, next) => {
             res.redirect('/failed-login-redirect.html')
         }
     })
+})
+
+app.post('/rest-created.html', (req, res) => {
+    rand_rest_id = Math.floor(Math.random() * 10000)
+    let sql = `INSERT INTO Restaurant(rest_id, franchise_id, rest_name, rest_address, rest_pass)
+    VALUES(?, ?, ?, ?, ?)`
+    let rest_data = [rand_rest_id, req.body.franchise_id, req.body.rest_name, req.body.street_address, req.body.password]
+    console.log('restaurant data added')
+    rdb.run(sql, rest_data,
+        (err, row) => {
+            if (err) {
+                return console.error(err.message)
+            }
+            res.redirect(303, './rest-created.html') 
+        })
 })
 /*
 rdb.close((err) => {
