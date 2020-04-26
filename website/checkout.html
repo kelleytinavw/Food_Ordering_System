@@ -70,7 +70,6 @@
             <nav class="amado-nav">
                 <ul>
                     <li><a href="index.html">Restaurants</a></li>
-                    <li class="active"><a href="cart.html">Cart</a></li>
                     <li><a href="checkout.html">Checkout</a></li>
                     <li><a href= "create-account.html">Create an Account</a></li>
                     <li><a href= "add-restaurant.html">Add Your Restaurant</a></li>
@@ -82,74 +81,117 @@
 
         <div class="cart-table-area section-padding-100">
             <div class="container-fluid">
+                <!--Order Preview  -->
                 <div class="row">
                     <div class="col-12 col-lg-8">
-                        <div class="checkout_details_area mt-50 clearfix">
+                        <div class="cart-title mt-50">
+                            <h2>Shopping Cart</h2>
+                        </div>
 
-                            <div class="cart-title">
-                                <h2>Checkout</h2>
-                            </div>
-
-                            <form action="#" method="post">
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <input type="text" class="form-control" id="first_name" value="" placeholder="First Name" required>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <input type="text" class="form-control" id="last_name" value="" placeholder="Last Name" required>
-                                    </div>
-
-                                    <div class="col-12 mb-3">
-                                        <input type="email" class="form-control" id="email" placeholder="Email" value="">
-                                    </div>
-                                    <div class="col-12 mb-3">
-                                        <select class="w-100" id="country">
-                                        <option value="usa">United States</option>
-                                        <option value="cana">Canada</option>
-                                    </select>
-                                    </div>
-                                    <div class="col-12 mb-3">
-                                        <input type="text" class="form-control mb-3" id="street_address" placeholder="Address" value="">
-                                    </div>
-                                    <div class="col-12 mb-3">
-                                        <input type="text" class="form-control" id="city" placeholder="City" value="">
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <input type="text" class="form-control" id="zipCode" placeholder="Zip Code" value="">
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <input type="number" class="form-control" id="phone_number" min="0" placeholder="Phone Number" value="">
-                                    </div>
-                                    <div class="col-12 mb-3">
-                                        <textarea name="comment" class="form-control w-100" id="comment" cols="30" rows="10" placeholder="Leave a comment about your order"></textarea>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <input name="number" class="form-control" id="card_num" minlength = "16" maxlength= "16" placeholder="Credit Card Number"></input>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <input name="number" class="form-control" id="card_digt" minlength = "3" maxlength= "4" placeholder="3-Digit Number"></input>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <input name="number" class="form-control" id="card_exp_month" minlength = "1" maxlength= "2" placeholder="Expitation Month"></input>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <input name="number" class="form-control" id="card_exp_year" minlength = "4" maxlength= "4" placeholder="Expitation Year"></input>
-                                    </div>
-                                </div>
-                            </form>
+                        <div class="cart-table clearfix">
+                            <table class="table table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Name</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="cart_product_img">
+                                            <a href="#"><img src="img/bg-img/cart1.jpg" alt="Product"></a>
+                                        </td>
+                                        <td class="cart_product_desc">
+                                            <h5>MENU ITEM TAG HERE PULL FROM DATABASE</h5>
+                                        </td>
+                                        <td class="price">
+                                            <span>$PRICE FROM DATABASE</span>
+                                        </td>
+                                        <td class="qty">
+                                            <div class="qty-btn d-flex">
+                                                <p>Qty</p>
+                                                <div class="quantity">
+                                                    <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                                    <input type="number" class="qty-text" id="qty" step="1" min="1" max="300" name="quantity" value="1">
+                                                    <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cart_product_img">
+                                            <a href="#"><img src="img/bg-img/cart2.jpg" alt="Product"></a>
+                                        </td>
+                                        <td class="cart_product_desc">
+                                            <h5>MENU ITEM TAG HERE PULL FROM DATABASE</h5>
+                                        </td>
+                                        <td class="price">
+                                            <span>$PRICE FROM DATABASE</span>
+                                        </td>
+                                        <td class="qty">
+                                            <div class="qty-btn d-flex">
+                                                <p>Qty</p>
+                                                <div class="quantity">
+                                                    <span class="qty-minus" onclick="var effect = document.getElementById('qty2'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                                    <input type="number" class="qty-text" id="qty2" step="1" min="1" max="300" name="quantity" value="1">
+                                                    <span class="qty-plus" onclick="var effect = document.getElementById('qty2'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cart_product_img">
+                                            <a href="#"><img src="img/bg-img/cart3.jpg" alt="Product"></a>
+                                        </td>
+                                        <td class="cart_product_desc">
+                                            <h5>MENU ITEM TAG HERE PULL FROM DATABASE</h5>
+                                        </td>
+                                        <td class="price">
+                                            <span>$PRICE FROM DATABASE</span>
+                                        </td>
+                                        <td class="qty">
+                                            <div class="qty-btn d-flex">
+                                                <p>Qty</p>
+                                                <div class="quantity">
+                                                    <span class="qty-minus" onclick="var effect = document.getElementById('qty3'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                                    <input type="number" class="qty-text" id="qty3" step="1" min="1" max="300" name="quantity" value="1">
+                                                    <span class="qty-plus" onclick="var effect = document.getElementById('qty3'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                     <div class="col-12 col-lg-4">
                         <div class="cart-summary">
                             <h5>Cart Total</h5>
                             <ul class="summary-table">
-                                <li><span>subtotal:</span> <span>$140.00</span></li>
-                                <li><span>delivery:</span> <span>Free</span></li>
-                                <li><span>total:</span> <span>$140.00</span></li>
+                                <li><span>subtotal:</span> <span>$ADD PRICES TOGETHER</span></li>
+                                <li><span>delivery:</span> <span>$Cost?</span></li>
+                                <li><span>total:</span> <span>$ADD PRICES TOGETHE + tax</span></li>
                             </ul>
-
                             <div class="cart-btn mt-100">
-                                <a href="#" class="btn amado-btn w-100">Checkout</a>
+                                <a href="cart.html" class="btn amado-btn w-100">Checkout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end of order preview -->
+ <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+                <!-- payment confirmation -->
+                <div class="row">
+                    <div class="col-12 col-lg-8">
+                        <div class="checkout_details_area mt-50 clearfix">
+
+                            <div class="cart-title">
+                                <h2>Review Information</h2>
+                            </div>
+                            <div class="cart-title">
+                                <h4>first name last name <br> address <br> last 4 digits of credit card </h4>
                             </div>
                         </div>
                     </div>
