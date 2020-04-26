@@ -16,8 +16,10 @@ let rdb = new sqlite3.Database('./sqlDB.db', sqlite3.OPEN_READWRITE, (err) => {
     console.log('Connected to SQLite Database')
 })
 
+
 //test query
 rdb.serialize(() => {
+    /*
     rdb.each(`SELECT first_name AS f_name, 
                 cust_email AS email 
                 FROM Customer
@@ -27,22 +29,28 @@ rdb.serialize(() => {
         }
         console.log(row.f_name + "\t" + row.email)
     })
-
+*/
 
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.post('/index.html', (req, res) => {
-rdb.run(`INSERT INTO Customer(cust_id, first_name, last_name, cust_email, cust_address, phone, cust_pass)
-        VALUES(?, ?, ?, ?, ?, ?, ?)`, [Math.floor(Math.random() * 10000), req.body.first_name, req.body.last_name, req.body.email, req.body.street_address, req.body.phone_number, req.body.password],
+app.post('/add-payment-info.html', (req, res) => {
+    let rand_id = Math.floor(Math.random() * 10000)
+    let account_data = [rand_id, req.body.first_name, req.body.last_name, req.body.email, req.body.street_address, req.body.phone_number, req.body.password]
+    console.log('account data added')
+    rdb.run(`INSERT INTO Customer(cust_id, first_name, last_name, cust_email, cust_address, phone, cust_pass)
+        VALUES(?, ?, ?, ?, ?, ?, ?)`, account_data,
         (err, row) => {
             if (err) {
-                console.error(err.message)
+                return console.error(err.message)
             }
-                console.log('Insertion Successful')
-                res.redirect(303, './index.html')
-                
+            res.redirect(303, './add-payment-info.html') 
         })
+})
+
+app.post('/account-created.html', (req, res) => {
+    console.log('Insertion Successful')
+    res.redirect(303, './account-created.html')
     })
 
 })
