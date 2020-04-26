@@ -1,6 +1,3 @@
-//node setup test, no significance to project
-console.log('food ordering management system')
-
 //express setup
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -9,6 +6,14 @@ const MongoClient = require('mongodb').MongoClient
 let rand_id = 0
 let rand_pay_id = 0
 let rand_rest_id = 0
+
+//local server
+app.listen(3000, function() {
+    console.log('Listening on 3000...') 
+})
+
+//read
+app.use(express.static("website"))
 
 const sqlite3 = require('sqlite3').verbose()
 
@@ -114,33 +119,25 @@ rdb.close((err) => {
 MongoClient.connect('mongodb+srv://adrian:csc570@cluster0-onki1.mongodb.net/test?retryWrites=true&w=majority', {
     useUnifiedTopology: true })
 .then (client => {
-    console.log('Connected to Database')
+    console.log('Connected to MongoDB Server')
     const db = client.db('menu-database')
     const menuCollection = db.collection('menus')
-    
 
-    //local server
-    app.listen(3000, function() {
-        console.log('Listening on 3000...') 
-    })
-
-    //read
-    app.use(express.static("website"))
-
-    app.post('/menu', (req, res) => {
+    app.post('#', (req, res) => {
         menuCollection.insertOne(req.body)
         .then(result => {
-            console.log(result)
+            res.redirect('/')
         })
         .catch(error => console.error(error))
     })
 
     app.get('/', (req, res) => {
-        const cursor = db.collection('menus').find().toArray()
+        db.collection('menus').find().toArray()
         .then(results => {
-            console.log(cursor)
+            res.render('home.ejs', {menus: results})
         })
         .catch(error => console.error(error))
+        
     })
 })
 .catch(error => console.error(error))
