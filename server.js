@@ -6,6 +6,8 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 const MongoClient = require('mongodb').MongoClient
+let rand_id = 0
+let rand_pay_id = 0
 
 const sqlite3 = require('sqlite3').verbose()
 
@@ -16,8 +18,10 @@ let rdb = new sqlite3.Database('./sqlDB.db', sqlite3.OPEN_READWRITE, (err) => {
     console.log('Connected to SQLite Database')
 })
 
+
 //test query
 rdb.serialize(() => {
+    /*
     rdb.each(`SELECT first_name AS f_name, 
                 cust_email AS email 
                 FROM Customer
@@ -27,22 +31,38 @@ rdb.serialize(() => {
         }
         console.log(row.f_name + "\t" + row.email)
     })
-
+*/
 
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.post('/index.html', (req, res) => {
-rdb.run(`INSERT INTO Customer(cust_id, first_name, last_name, cust_email, cust_address, phone, cust_pass)
-        VALUES(?, ?, ?, ?, ?, ?, ?)`, [Math.floor(Math.random() * 10000), req.body.first_name, req.body.last_name, req.body.email, req.body.street_address, req.body.phone_number, req.body.password],
+app.post('/add-payment-info.html', (req, res) => {
+    rand_id = Math.floor(Math.random() * 10000)
+    let account_data = [rand_id, req.body.first_name, req.body.last_name, req.body.email, req.body.street_address, req.body.phone_number, req.body.password]
+    console.log('account data added')
+    rdb.run(`INSERT INTO Customer(cust_id, first_name, last_name, cust_email, cust_address, phone, cust_pass)
+        VALUES(?, ?, ?, ?, ?, ?, ?)`, account_data,
         (err, row) => {
             if (err) {
-                console.error(err.message)
+                return console.error(err.message)
             }
-                console.log('Insertion Successful')
-                res.redirect(303, './index.html')
-                
+            res.redirect(303, './add-payment-info.html') 
         })
+})
+
+app.post('/account-created.html', (req, res) => {
+    rand_pay_id = Math.floor(Math.random() * 20000)
+    let payment_data = [rand_pay_id, req.body.name, req.body.card_num, req.body.card_exp_month + "/" + req.body.card_exp_year, req.body.zipCode, req.body.card_name, rand_id]
+    rdb.run(`INSERT INTO Payment(payment_id, name, card_num, card_expDate, card_zip_code, card_name, cust_id)
+        VALUES(?, ?, ?, ?, ?, ?, ?)`, payment_data,
+        (err, row) => {
+            if (err) {
+                return console.error(err.message)
+            }
+            console.log('Insertion Successful')
+            res.redirect(303, './account-created.html')
+        })
+    
     })
 
 })
