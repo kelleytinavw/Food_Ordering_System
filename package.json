@@ -17,9 +17,14 @@
   },
   "homepage": "https://github.com/kelleytinavw/Food_Ordering_System#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.2",
     "express": "^4.17.1",
+    "express-handlebars": "^4.0.3",
     "mongodb": "^3.5.6",
     "mongoose": "^5.9.10",
-    "nodemon": "^2.0.3"
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.3",
+    "sqlite3": "^4.1.1"
   }
 }
