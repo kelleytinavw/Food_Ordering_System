@@ -89,13 +89,13 @@
                                 <h2>Add Your Restaurant</h2>
                             </div>
 
-                            <form action="#" method="post">
+                            <form action="rest-created.html" method="post">
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
-                                        <input type="text" class="form-control" id="rest_owner" value="" placeholder="Restaurant Owner's Name" required>
+                                        <input type="text" class="form-control" id="rest_name" name="rest_name" value="" placeholder="Restaurant Name" required>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <input type="number" class="form-control" id="franchise_id" minlength= "4" maxlength= "4" value="" placeholder="Franchise ID " required>
+                                        <input type="number" class="form-control" id="franchise_id" name="franchise_id" minlength= "6" maxlength= "6" value="" placeholder="Franchise ID " required>
                                     </div>
                                     <div class="col-12 mb-3">
                                         <select class="w-100" id="country">
@@ -104,18 +104,21 @@
                                     </select>
                                     </div>
                                     <div class="col-12 mb-3">
-                                        <input type="text" class="form-control mb-3" id="street_address" placeholder="Address" value="">
+                                        <input type="text" class="form-control mb-3" id="street_address" name="street_address" placeholder="Address" value="">
                                     </div>
                                     <div class="col-12 mb-3">
-                                        <input type="text" class="form-control" id="city" placeholder="City" value="">
+                                        <input type="text" class="form-control" id="city" name="city" placeholder="City" value="">
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <input type="text" class="form-control" id="zipCode" placeholder="Zip Code" value="">
+                                        <input type="text" class="form-control" id="zipCode" name="zipCode" placeholder="Zip Code" value="">
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <input type="password" class="form-control" id="password" minlength="8" placeholder="Password (minimum 8 characters)" required>
+                                        <input type="password" class="form-control" id="password" name="password" minlength="8" placeholder="Password (minimum 8 characters)" required>
                                     </div>
                                                                         
+                                </div>
+                                <div class="cart-btn mt-100">
+                                    <button type = "submit" class="btn amado-btn w-100">Add Restaurant</button>
                                 </div>
                             </form>
                         </div>
