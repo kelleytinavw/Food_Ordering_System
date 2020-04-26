@@ -83,7 +83,7 @@ app.post('/index.html', (req, res, next) => {
             res.redirect('/index.html')
         }
         else {
-            res.redirect('/create-account.html')
+            res.redirect('/failed-login-redirect.html')
         }
     })
 })
