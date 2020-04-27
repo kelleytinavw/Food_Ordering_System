@@ -10,13 +10,22 @@ let rand_rest_id = 0
 let current_id = 0
 let current_vendor_id = 0
 
+app.use(bodyParser.urlencoded({ extended: true }))
+
+//read
+
+app.use(express.static('website'))
+
 //local server
 app.listen(3000, function() {
     console.log('Listening on 3000...') 
 })
 
-//read
-app.use(express.static("website"))
+
+app.get('/', (req, res) => {
+    res.send('WHAT IS GOING ON')
+})
+
 
 const sqlite3 = require('sqlite3').verbose()
 
@@ -27,21 +36,7 @@ let rdb = new sqlite3.Database('./sqlDB.db', sqlite3.OPEN_READWRITE, (err) => {
     console.log('Connected to SQLite Database')
 })
 
-
-    /*
-    rdb.each(`SELECT first_name AS f_name, 
-                cust_email AS email 
-                FROM Customer
-                ORDER BY first_name`, (err, row) => {
-        if (err) {
-            console.error(err.message)
-        }
-        console.log(row.f_name + "\t" + row.email)
-    })
-*/
-
 app.set('view engine', 'ejs')
-app.use(bodyParser.urlencoded({ extended: true }))
 
 app.post('/add-payment-info.html', (req, res) => {
     rand_id = Math.floor(Math.random() * 10000)
@@ -96,6 +91,8 @@ app.post('/home.html', (req, res, next) => {
             res.redirect('/failed-login-redirect.html')
         }
     })
+
+    
 })
 
 app.post('/rest-created.html', (req, res) => {
@@ -171,15 +168,6 @@ MongoClient.connect('mongodb+srv://adrian:csc570@cluster0-onki1.mongodb.net/test
             res.redirect('/item-added.html')
         })
         .catch(error => console.error(error))
-    })
-
-    app.get('/', (req, res) => {
-        db.collection('menus').find().toArray()
-        .then(results => {
-            res.render('home.ejs', {menus: results})
-        })
-        .catch(error => console.error(error))
-        
     })
 })
 .catch(error => console.error(error))
