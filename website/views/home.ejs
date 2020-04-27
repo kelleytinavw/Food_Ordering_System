@@ -77,11 +77,35 @@
            
         </header>
         <!-- Header Area End -->
+        
+        <ol class="carousel-indicators">
+            <li class="active" data-target="#product_details_slider" data-slide-to="0" style="background-image: url(img/product-img/pro-big-1.jpg);">
+            </li>
+            <li data-target="#product_details_slider" data-slide-to="1" style="background-image: url(img/product-img/pro-big-2.jpg);">
+            </li>
+            <li data-target="#product_details_slider" data-slide-to="2" style="background-image: url(img/product-img/pro-big-3.jpg);">
+            </li>
+            <li data-target="#product_details_slider" data-slide-to="3" style="background-image: url(img/product-img/pro-big-4.jpg);">
+            </li>
+        </ol>
 
-        <!-- Product Catagories Area Start -->
-        <div class="products-catagories-area clearfix">
-            <div class="amado-pro-catagory clearfix">
-            </div>
+        <script type="text/javascript"> 
+          
+            function sliderTemplate(sTemplate) { 
+                return `
+                <div class= "carousel-indicators">
+                <img class= "item_photo" src="${sTemplate.photo}">
+                <ul> 
+                    <span  class="item_name">(${sTemplate.item_name})</span>
+                    <span class="item_descr">(${sTemplate.item_descr})</span>
+                    <span class="item_ingredients">(${sTemplate.item_ingredient})</span>
+                    <span  class="item_price">(${sTemplate.item_price})</span>
+                </ul>
+                </div>
+            `   
+            };
+        </script> 
+        
         </div>
         <!-- Product Catagories Area End -->
     </div>
