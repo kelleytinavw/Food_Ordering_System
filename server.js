@@ -7,6 +7,9 @@ let rand_id = 0
 let rand_pay_id = 0
 let rand_rest_id = 0
 
+let current_id = 0
+let current_vendor_id = 0
+
 //local server
 app.listen(3000, function() {
     console.log('Listening on 3000...') 
@@ -51,6 +54,7 @@ app.post('/add-payment-info.html', (req, res) => {
             if (err) {
                 return console.error(err.message)
             }
+            current_id = rand_id
             res.redirect(303, './add-payment-info.html') 
         })
 })
@@ -78,6 +82,7 @@ app.post('/home.html', (req, res, next) => {
     rdb.all(sql, (err, rows) => {
         rows.forEach((row) => {
             if (row.cust_email == req.body.email && row.cust_pass == req.body.password) {
+                current_id = row.cust_id
                 isAccount = true
             }
             else {
@@ -104,6 +109,7 @@ app.post('/rest-created.html', (req, res) => {
             if (err) {
                 return console.error(err.message)
             }
+            current_vendor_id = rand_rest_id
             res.redirect(303, './rest-created.html') 
         })
 })
@@ -115,6 +121,7 @@ app.post('/vendors_home.html', (req, res, next) => {
     rdb.all(sql, (err, rows) => {
         rows.forEach((row) => {
             if (row.franchise_id == req.body.franchise_id && row.rest_pass == req.body.password) {
+                current_vendor_id = row.rest_id
                 isAccount = true
             }
             else {
@@ -145,6 +152,18 @@ MongoClient.connect('mongodb+srv://adrian:csc570@cluster0-onki1.mongodb.net/test
     console.log('Connected to MongoDB Server')
     const db = client.db('menu-database')
     const menuCollection = db.collection('menus')
+
+    /*
+    app.post('/rest-created.html', (req, res) => {
+        sql = `SELECT rest_name FROM Restaurant WHERE rest_id = "${current_vendor_id}"`
+        let rest_name = ""
+        rdb.get(sql, (err, row) => {
+            console.log(row.rest_name)
+            rest_name = row.rest_name
+        })
+        menuCollection.insert({ restaurant: rest_name, menu: [] })
+    })
+*/
 
     app.post('/item-added.html', (req, res) => {
         menuCollection.insertOne(req.body)
