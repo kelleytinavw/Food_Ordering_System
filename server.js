@@ -183,4 +183,3 @@ MongoClient.connect('mongodb+srv://adrian:csc570@cluster0-onki1.mongodb.net/test
     })
 })
 .catch(error => console.error(error))
-
