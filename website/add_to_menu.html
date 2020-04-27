@@ -88,6 +88,9 @@
                             <form action="/item-added.html" method="post">
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
+                                        <input type="text" class="form-control" id="rest_name" name="rest_name" value="" placeholder="Restaurant Name" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
                                         <input type="number" class="form-control" id="item_id" name= "item_id" value="" placeholder="Item ID" required>
                                     </div>
                                     <div class="col-12 mb-3">
@@ -100,6 +103,9 @@
                                     <div class="col-md-6 mb-3">
                                         <input type="text" class="form-control" id="item_name" name= "item_name" value="" placeholder="Item Name" required>
                                     </div>
+                                    <div class="col-md-6 mb-3">
+                                        <input type="number" class="form-control" id="item_price" name="item_price" min="1" step= "any" max= "51" placeholder= "Price" value="">
+                                    </div>
                                     <div class="col-12 mb-3">
                                         <input type="comment" class="form-control" id="item_descr" name="item_descr" placeholder="Add a description" value="">
                                     </div>
@@ -107,9 +113,7 @@
                                     <div class="col-12 mb-3">
                                         <input type="comment" class="form-control" id="item_ingredients" name="item_ingredients" placeholder="Ingredients" value="">
                                     </div>
-                                    <div class="col-md-6 mb-3">
-                                        <input type="number" class="form-control" id="item_price" name="item_price" min="1" step= "any" max= "51" placeholder= "Price" value="">
-                                    </div>
+                                    
                                     <div class="col-md-6 mb-3">
                                             <input type="file"  id="item_photo" name="item_photo" placeholder="Upload Image" accept= "image/*">
                                     </div>
