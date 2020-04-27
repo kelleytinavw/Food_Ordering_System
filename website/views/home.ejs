@@ -77,7 +77,7 @@
            
         </header>
         <!-- Header Area End -->
-        
+        <!--
         <ol class="carousel-indicators">
             <li class="active" data-target="#product_details_slider" data-slide-to="0" style="background-image: url(img/product-img/pro-big-1.jpg);">
             </li>
@@ -88,6 +88,16 @@
             <li data-target="#product_details_slider" data-slide-to="3" style="background-image: url(img/product-img/pro-big-4.jpg);">
             </li>
         </ol>
+        -->
+
+        <ul class="menus">
+            <% for(var i = 0; i < menus.length; i++) {%>
+            <li class ="menu">
+                <span><%= menus[i].item_name %></span>:
+                <span><% menus[i].item_price %></span>
+            </li>
+            <% }>
+        </ul>
 
         <script type="text/javascript"> 
           
